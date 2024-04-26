@@ -1,0 +1,7 @@
+---
+- hosts: '{{ host }}'
+  become: yes
+  tasks:
+    - name: change timezone
+      shell: |
+        sudo ln -sf /usr/share/zoneinfo/America/Lima /etc/localtime

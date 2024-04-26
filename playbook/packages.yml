@@ -1,0 +1,30 @@
+---
+- hosts: '{{ host }}'
+  become: yes
+  tasks:
+    - name: Update Packages
+      apt:
+        upgrade: dist
+        update_cache: yes
+        dpkg_options: 'force-confold,force-confdef'
+
+    - name: Install packages required
+      apt:
+        name: "{{ item }}"
+        state: latest
+        cache_valid_time: 86400
+      loop:
+        - docker.io
+        - python3
+        - docker-compose
+
+    - name: Create "docker" group
+      group:
+        name: docker
+        state: present
+
+    - name: Add user root to "docker" group
+      user:
+        name: root
+        group: docker
+        state: present

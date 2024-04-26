@@ -1,0 +1,2 @@
+[services]
+laboratorio ansible_host=64.23.247.242 ansible_user=root ansible_ssh_port=22

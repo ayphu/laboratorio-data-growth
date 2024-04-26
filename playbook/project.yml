@@ -1,0 +1,11 @@
+---
+- hosts: '{{ host }}'
+  become: yes
+  tasks:
+    - name: Copy files to the server
+      copy:
+        src: ../project/{{ folder }}
+        dest: project/
+        owner: root
+        group: root
+        mode: 0755
