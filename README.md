@@ -1,4 +1,4 @@
-# Install infraestructure - Data Growth Community
+# Install infrastructure - Data Growth Community
 
 Repositorio del MasterClasss "Creando un ambiente de datos a prueba de balas con DevOps"
 
